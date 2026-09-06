@@ -1,0 +1,89 @@
+{
+  "actions": [],
+  "creation": "2026-09-06 12:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "appearance_section",
+    "accent_color",
+    "theme_mode",
+    "column_break_density",
+    "density",
+    "sidebar_style",
+    "advanced_section",
+    "custom_css"
+  ],
+  "fields": [
+    {
+      "fieldname": "appearance_section",
+      "fieldtype": "Section Break",
+      "label": "Appearance"
+    },
+    {
+      "default": "#0E5C54",
+      "fieldname": "accent_color",
+      "fieldtype": "Color",
+      "label": "Accent color"
+    },
+    {
+      "default": "Light",
+      "fieldname": "theme_mode",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Theme mode",
+      "options": "Light\nDark\nSystem"
+    },
+    {
+      "fieldname": "column_break_density",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "Comfortable",
+      "fieldname": "density",
+      "fieldtype": "Select",
+      "label": "Density",
+      "options": "Comfortable\nCompact"
+    },
+    {
+      "default": "Icon Rail",
+      "fieldname": "sidebar_style",
+      "fieldtype": "Select",
+      "label": "Sidebar style",
+      "options": "Icon Rail\nClassic"
+    },
+    {
+      "fieldname": "advanced_section",
+      "fieldtype": "Section Break",
+      "label": "Advanced"
+    },
+    {
+      "fieldname": "custom_css",
+      "fieldtype": "Code",
+      "label": "Custom CSS",
+      "options": "CSS"
+    }
+  ],
+  "issingle": 1,
+  "links": [],
+  "modified": "2026-09-06 12:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Aurea Theme",
+  "name": "Aurea Settings",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "print": 1,
+      "read": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

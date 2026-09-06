@@ -1,0 +1,497 @@
+/* Aurea — ERPNext / Frappe desk + website restyle
+   Loaded via hooks.py app_include_css + web_include_css.
+   Variables map onto Frappe v14–v16 custom properties so core components follow. */
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+
+:root,
+html.aurea-root,
+body.aurea-desk {
+  --aurea-bg: #f3f0ea;
+  --aurea-surface: #fffcf7;
+  --aurea-subtle: #e8e3d9;
+  --aurea-fg: #1a1916;
+  --aurea-muted: #6b6760;
+  --aurea-faint: #8a857c;
+  --aurea-line: rgba(26, 25, 22, 0.1);
+  --aurea-accent: #0e5c54;
+  --aurea-accent-fg: #f7f4ee;
+  --aurea-accent-soft: #e3efed;
+  --aurea-sidebar: #141a19;
+  --aurea-sidebar-fg: #ece8e1;
+  --aurea-sidebar-muted: #9aa09c;
+  --aurea-danger: #8f3d32;
+  --aurea-success: #2f6b4f;
+  --aurea-warning: #8a6a2f;
+  --aurea-radius: 12px;
+  --aurea-radius-sm: 8px;
+  --aurea-shadow: 0 0 0 1px rgba(26, 25, 22, 0.06), 0 1px 2px -1px rgba(26, 25, 22, 0.06),
+    0 2px 8px 0 rgba(26, 25, 22, 0.04);
+  --font-stack: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --primary: var(--aurea-accent) !important;
+  --primary-color: var(--aurea-accent) !important;
+  --dt-primary-color: var(--aurea-accent) !important;
+  --btn-primary: var(--aurea-accent) !important;
+  --bg-color: var(--aurea-bg) !important;
+  --fg-color: var(--aurea-surface) !important;
+  --text-color: var(--aurea-fg) !important;
+  --heading-color: var(--aurea-fg) !important;
+  --text-muted: var(--aurea-muted) !important;
+  --text-light: var(--aurea-faint) !important;
+  --border-color: var(--aurea-line) !important;
+  --control-bg: var(--aurea-subtle) !important;
+  --control-bg-on-gray: var(--aurea-subtle) !important;
+  --disabled-control-bg: var(--aurea-subtle) !important;
+  --modal-bg: var(--aurea-surface) !important;
+  --navbar-bg: var(--aurea-surface) !important;
+  --subtle-fg: var(--aurea-muted) !important;
+  --subtle-accent: var(--aurea-accent-soft) !important;
+  --awesomplete-hover-bg: var(--aurea-accent-soft) !important;
+  --sidebar-select-color: var(--aurea-accent-soft) !important;
+  --bg-light-gray: var(--aurea-subtle) !important;
+  --card-bg: var(--aurea-surface) !important;
+  --alert-bg: var(--aurea-accent-soft) !important;
+  --icon-fill: var(--aurea-muted) !important;
+  --icon-stroke: var(--aurea-muted) !important;
+  --scrollbar-thumb-color: rgba(26, 25, 22, 0.18) !important;
+  --scrollbar-track-color: transparent !important;
+}
+
+html.aurea-dark,
+html.aurea-dark body,
+body.aurea-dark {
+  --aurea-bg: #0e1010;
+  --aurea-surface: #161918;
+  --aurea-subtle: #1c211f;
+  --aurea-fg: #edeae4;
+  --aurea-muted: #a8a49c;
+  --aurea-faint: #7d7a74;
+  --aurea-line: rgba(237, 234, 228, 0.12);
+  --aurea-accent: #5ba8a0;
+  --aurea-accent-fg: #0b1211;
+  --aurea-accent-soft: #1a3330;
+  --aurea-sidebar: #0a0c0c;
+  --aurea-sidebar-fg: #ece8e1;
+  --aurea-sidebar-muted: #8e938f;
+  --aurea-danger: #e08b7e;
+  --aurea-success: #8fbfa4;
+  --aurea-warning: #d4b56a;
+  --aurea-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+html.aurea-root,
+body.aurea-desk,
+.aurea-desk .page-container,
+.aurea-desk .layout-main-section,
+.aurea-desk .form-layout {
+  font-family: var(--font-stack) !important;
+  background-color: var(--aurea-bg) !important;
+  color: var(--aurea-fg) !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.aurea-desk {
+  font-size: 14px;
+}
+
+body.aurea-compact {
+  font-size: 13px;
+}
+body.aurea-compact .list-row,
+body.aurea-compact .list-row-head,
+body.aurea-compact .grid-row,
+body.aurea-compact .level {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+
+/* ---------- Navbar ---------- */
+.aurea-desk .navbar,
+.aurea-desk header.navbar,
+.aurea-desk .navbar.navbar-light,
+.aurea-desk .navbar-expand {
+  background: var(--aurea-surface) !important;
+  border-bottom: 1px solid var(--aurea-line) !important;
+  box-shadow: none !important;
+  min-height: 52px;
+}
+.aurea-desk .navbar-brand,
+.aurea-desk .navbar-home,
+.aurea-desk .navbar .btn,
+.aurea-desk .navbar .nav-link {
+  color: var(--aurea-fg) !important;
+  font-weight: 500;
+}
+.aurea-desk .navbar .search-bar,
+.aurea-desk .navbar .awesomebar,
+.aurea-desk #navbar-search,
+.aurea-desk input[type="search"] {
+  background: var(--aurea-subtle) !important;
+  border: 0 !important;
+  border-radius: var(--aurea-radius-sm) !important;
+  color: var(--aurea-fg) !important;
+  box-shadow: var(--aurea-shadow) !important;
+}
+
+/* ---------- Sidebar / desk ---------- */
+.aurea-desk .desk-sidebar,
+.aurea-desk .standard-sidebar,
+.aurea-desk .layout-side-section,
+.aurea-desk .workspace-sidebar,
+.aurea-desk .body-sidebar,
+.aurea-desk .sidebar-menu {
+  background: var(--aurea-sidebar) !important;
+  color: var(--aurea-sidebar-fg) !important;
+  border-right: 0 !important;
+  border-color: transparent !important;
+}
+.aurea-desk .desk-sidebar .standard-sidebar-label,
+.aurea-desk .layout-side-section .sidebar-label,
+.aurea-desk .standard-sidebar-section .standard-sidebar-label {
+  color: var(--aurea-sidebar-muted) !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+}
+.aurea-desk .desk-sidebar .desk-sidebar-item,
+.aurea-desk .standard-sidebar-item,
+.aurea-desk .sidebar-item-container,
+.aurea-desk .item-anchor,
+.aurea-desk .layout-side-section a,
+.aurea-desk .layout-side-section .sidebar-item {
+  color: var(--aurea-sidebar-muted) !important;
+  border-radius: var(--aurea-radius-sm) !important;
+}
+.aurea-desk .desk-sidebar .desk-sidebar-item:hover,
+.aurea-desk .standard-sidebar-item:hover,
+.aurea-desk .item-anchor:hover,
+.aurea-desk .sidebar-item-container:hover,
+.aurea-desk .standard-sidebar-item.selected,
+.aurea-desk .standard-sidebar-item.active,
+.aurea-desk .desk-sidebar-item.selected {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: var(--aurea-sidebar-fg) !important;
+}
+.aurea-desk .layout-side-section .sidebar-menu .badge,
+.aurea-desk .desk-sidebar .indicator {
+  background: var(--aurea-accent) !important;
+  color: var(--aurea-accent-fg) !important;
+}
+
+body.aurea-rail .desk-sidebar,
+body.aurea-rail .body-sidebar,
+body.aurea-rail .layout-side-section {
+  width: 72px !important;
+  min-width: 72px !important;
+  overflow: hidden;
+}
+body.aurea-rail .desk-sidebar .standard-sidebar-label,
+body.aurea-rail .desk-sidebar .item-anchor span,
+body.aurea-rail .layout-side-section .sidebar-label {
+  display: none !important;
+}
+
+/* ---------- Page chrome ---------- */
+.aurea-desk .page-head,
+.aurea-desk .page-head-content,
+.aurea-desk .page-title h3,
+.aurea-desk .page-title .title-text {
+  background: transparent !important;
+  color: var(--aurea-fg) !important;
+  font-weight: 600 !important;
+}
+.aurea-desk .page-container,
+.aurea-desk .page-body,
+.aurea-desk .layout-main-section-wrapper,
+.aurea-desk .layout-main-section {
+  background: var(--aurea-bg) !important;
+}
+.aurea-desk .page-form,
+.aurea-desk .form-layout,
+.aurea-desk .form-page,
+.aurea-desk .form-dashboard-section,
+.aurea-desk .form-section,
+.aurea-desk .std-form-layout {
+  background: var(--aurea-surface) !important;
+  border: 0 !important;
+  border-radius: var(--aurea-radius) !important;
+  box-shadow: var(--aurea-shadow);
+}
+.aurea-desk .form-section .section-head,
+.aurea-desk .section-head {
+  color: var(--aurea-muted) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--aurea-line) !important;
+}
+.aurea-desk .form-tabs,
+.aurea-desk .form-tabs-list,
+.aurea-desk .nav-tabs {
+  background: transparent !important;
+  border-color: var(--aurea-line) !important;
+}
+.aurea-desk .nav-tabs .nav-link.active,
+.aurea-desk .form-tabs .nav-link.active {
+  color: var(--aurea-accent) !important;
+  border-bottom: 2px solid var(--aurea-accent) !important;
+  background: transparent !important;
+  font-weight: 600;
+}
+
+/* ---------- Buttons ---------- */
+.aurea-desk .btn,
+.aurea-desk button.btn {
+  border-radius: var(--aurea-radius-sm) !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+.aurea-desk .btn:active {
+  transform: scale(0.96);
+}
+.aurea-desk .btn-primary,
+.aurea-desk .btn-primary-dark,
+.aurea-desk .btn-login {
+  background: var(--aurea-accent) !important;
+  border-color: var(--aurea-accent) !important;
+  color: var(--aurea-accent-fg) !important;
+}
+.aurea-desk .btn-primary:hover,
+.aurea-desk .btn-login:hover {
+  filter: brightness(1.05);
+  color: var(--aurea-accent-fg) !important;
+}
+.aurea-desk .btn-default,
+.aurea-desk .btn-secondary,
+.aurea-desk .btn-secondary-dark {
+  background: var(--aurea-surface) !important;
+  border: 0 !important;
+  color: var(--aurea-fg) !important;
+  box-shadow: var(--aurea-shadow) !important;
+}
+
+/* ---------- Inputs ---------- */
+.aurea-desk .form-control,
+.aurea-desk .input-with-feedback,
+.aurea-desk textarea.form-control,
+.aurea-desk .like-disabled-input,
+.aurea-desk select.form-control,
+.aurea-desk .ql-editor {
+  background: var(--aurea-subtle) !important;
+  border: 0 !important;
+  border-radius: var(--aurea-radius-sm) !important;
+  color: var(--aurea-fg) !important;
+  box-shadow: var(--aurea-shadow) !important;
+}
+.aurea-desk .control-label,
+.aurea-desk .form-group label,
+.aurea-desk .frappe-control label {
+  color: var(--aurea-muted) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+.aurea-desk .frappe-control[data-required="true"] .control-label::after {
+  color: var(--aurea-danger) !important;
+}
+
+/* ---------- List ---------- */
+.aurea-desk .list-row-head,
+.aurea-desk .result-list .list-row-head {
+  background: var(--aurea-bg) !important;
+  border-bottom: 1px solid var(--aurea-line) !important;
+  color: var(--aurea-faint) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+}
+.aurea-desk .list-row,
+.aurea-desk .list-row-container,
+.aurea-desk .list-item-container {
+  background: transparent !important;
+  border-bottom: 1px solid var(--aurea-line) !important;
+  border-radius: 0 !important;
+}
+.aurea-desk .list-row:hover,
+.aurea-desk .list-row-container:hover {
+  background: var(--aurea-surface) !important;
+}
+.aurea-desk .list-row-col a,
+.aurea-desk .list-id,
+.aurea-desk .list-subject {
+  color: var(--aurea-fg) !important;
+  font-weight: 500;
+}
+.aurea-desk .filter-section,
+.aurea-desk .list-paging-area,
+.aurea-desk .sort-selector,
+.aurea-desk .filter-selector {
+  background: transparent !important;
+  color: var(--aurea-muted) !important;
+}
+
+/* ---------- Indicators / tags ---------- */
+.aurea-desk .indicator-pill,
+.aurea-desk .indicator-pill-right,
+.aurea-desk .indicator,
+.aurea-desk .tag-pill {
+  border-radius: 999px !important;
+  font-weight: 500 !important;
+  font-size: 11px !important;
+  padding: 2px 8px !important;
+}
+.aurea-desk .indicator-pill.green,
+.aurea-desk .indicator.green { background: rgba(47, 107, 79, 0.12) !important; color: var(--aurea-success) !important; }
+.aurea-desk .indicator-pill.red,
+.aurea-desk .indicator.red { background: rgba(143, 61, 50, 0.12) !important; color: var(--aurea-danger) !important; }
+.aurea-desk .indicator-pill.orange,
+.aurea-desk .indicator.orange,
+.aurea-desk .indicator-pill.yellow { background: rgba(138, 106, 47, 0.12) !important; color: var(--aurea-warning) !important; }
+.aurea-desk .indicator-pill.blue,
+.aurea-desk .indicator.blue { background: var(--aurea-accent-soft) !important; color: var(--aurea-accent) !important; }
+.aurea-desk .indicator-pill.gray,
+.aurea-desk .indicator.gray { background: var(--aurea-subtle) !important; color: var(--aurea-muted) !important; }
+
+/* ---------- Workspace widgets ---------- */
+.aurea-desk .widget,
+.aurea-desk .shortcut-widget-box,
+.aurea-desk .number-widget-box,
+.aurea-desk .ce-block,
+.aurea-desk .dashboard-graph,
+.aurea-desk .widget-group .widget {
+  background: var(--aurea-surface) !important;
+  border: 0 !important;
+  border-radius: 16px !important;
+  box-shadow: var(--aurea-shadow) !important;
+}
+.aurea-desk .widget .widget-head,
+.aurea-desk .widget .widget-title {
+  color: var(--aurea-fg) !important;
+  font-weight: 600 !important;
+}
+.aurea-desk .shortcut-widget-box:hover,
+.aurea-desk .widget:hover {
+  box-shadow: 0 0 0 1px rgba(26, 25, 22, 0.08), 0 4px 16px -4px rgba(26, 25, 22, 0.12) !important;
+}
+
+/* ---------- Kanban ---------- */
+.aurea-desk .kanban,
+.aurea-desk .kanban-column {
+  background: transparent !important;
+}
+.aurea-desk .kanban-column .kanban-column-header {
+  color: var(--aurea-fg) !important;
+  font-weight: 600 !important;
+}
+.aurea-desk .kanban-card,
+.aurea-desk .kanban-column .kanban-card {
+  background: var(--aurea-surface) !important;
+  border: 0 !important;
+  border-radius: var(--aurea-radius-sm) !important;
+  box-shadow: var(--aurea-shadow) !important;
+}
+
+/* ---------- Chatter / timeline ---------- */
+.aurea-desk .layout-side-section.form-sidebar,
+.aurea-desk .form-sidebar,
+.aurea-desk .timeline-content,
+.aurea-desk .new-timeline,
+.aurea-desk .comment-box {
+  background: var(--aurea-surface) !important;
+  color: var(--aurea-fg) !important;
+}
+.aurea-desk .timeline-item,
+.aurea-desk .comment-input-wrapper {
+  border-color: var(--aurea-line) !important;
+}
+
+/* ---------- Child tables ---------- */
+.aurea-desk .form-grid,
+.aurea-desk .grid-heading-row,
+.aurea-desk .grid-body,
+.aurea-desk .grid-row {
+  background: var(--aurea-surface) !important;
+  border-color: var(--aurea-line) !important;
+}
+.aurea-desk .grid-heading-row {
+  color: var(--aurea-faint) !important;
+  font-size: 12px !important;
+}
+
+/* ---------- Modals / dropdowns ---------- */
+.aurea-desk .modal-content,
+.aurea-desk .dropdown-menu,
+.aurea-desk .popover,
+.aurea-desk .datepicker,
+.aurea-desk .awesomplete > ul {
+  background: var(--aurea-surface) !important;
+  border: 0 !important;
+  border-radius: var(--aurea-radius) !important;
+  box-shadow: var(--aurea-shadow) !important;
+  color: var(--aurea-fg) !important;
+}
+.aurea-desk .modal-header,
+.aurea-desk .modal-footer {
+  border-color: var(--aurea-line) !important;
+}
+.aurea-desk .dropdown-item:hover,
+.aurea-desk .awesomplete > ul > li[aria-selected="true"] {
+  background: var(--aurea-accent-soft) !important;
+  color: var(--aurea-accent) !important;
+}
+
+/* ---------- Login / website ---------- */
+.for-login,
+.page-card-container,
+body[data-path="login"],
+.web-page-wrapper {
+  background: var(--aurea-bg) !important;
+  font-family: var(--font-stack) !important;
+}
+.for-login .page-card,
+.login-content.page-card,
+.page-card {
+  background: var(--aurea-surface) !important;
+  border: 0 !important;
+  border-radius: 16px !important;
+  box-shadow: var(--aurea-shadow) !important;
+}
+.for-login h4,
+.login-content .page-card-head {
+  color: var(--aurea-fg) !important;
+  font-weight: 600;
+}
+
+/* ---------- Notifications / toasts ---------- */
+.aurea-desk .notifications-list,
+.aurea-desk .msgprint,
+.aurea-desk .alert {
+  background: var(--aurea-surface) !important;
+  color: var(--aurea-fg) !important;
+  border-radius: var(--aurea-radius-sm) !important;
+}
+
+/* Theme switcher chip injected by aurea.js */
+.aurea-switcher {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 8px;
+}
+.aurea-switcher button {
+  height: 32px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--aurea-subtle);
+  color: var(--aurea-fg);
+  font: 500 12px var(--font-stack);
+  cursor: pointer;
+}
+.aurea-switcher button.is-active {
+  background: var(--aurea-accent);
+  color: var(--aurea-accent-fg);
+}

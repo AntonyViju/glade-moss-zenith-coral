@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Aurea",
+      "hasCanvas": false,
+      "bodyTextLen": 501,
+      "bodyTextHash": "15376bdc478863323f8d169d29ee46b3bd52711a472480f3fb27fc3385dff79f",
+      "bodyTextPrefix": "Aurea DESK THEME FOR ERPNEXT The desk Odoo wishes it still desig",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Aurea",
+      "hasCanvas": false,
+      "bodyTextLen": 132,
+      "bodyTextHash": "7ebb4fc8aa9e15e42fb45cd13d48c4c937fd461bcf043f73c61c98f4d33022e5",
+      "bodyTextPrefix": "Aurea Sign in to Harbor & Co. Preview the themed desk. Any passw",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
